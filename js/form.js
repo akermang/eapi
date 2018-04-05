@@ -55,7 +55,7 @@ function go(event) {
         let select3 = $('#select3 option:selected').val();
 
         // Construct the request
-        let searchUrl = "http://svcs.ebay.com/services/search/FindingService/v1";
+        let searchUrl = "https://svcs.ebay.com/services/search/FindingService/v1";
         searchUrl += "?OPERATION-NAME=findItemsAdvanced";
         searchUrl += "&SERVICE-VERSION=1.0.0";
         searchUrl += "&SECURITY-APPNAME=GalAkerm-eapi-PRD-8787d0107-f42d79cf";
