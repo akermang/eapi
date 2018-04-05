@@ -1,0 +1,36 @@
+.filter_container{
+    background: #b400ff47;
+    height: 187px;
+    margin-bottom: 5px;
+    
+    form{
+        display: block;
+        margin: auto;
+        width: auto;
+        text-align: left;
+        padding-left: 30px;
+        padding-top: 20px;
+
+        
+        .filter_listbox{
+            margin: 0% 2% 0% 0%;
+             position: static !important;
+             display: inline-block;
+
+             label{
+                font-size: 18px;
+                color: #5786bd;
+                display: flex;
+                margin-bottom: 2%;
+                font-family: 'CustomFont','Helvetica Neue',Arial !important;
+            }
+
+            .filter_select{
+                padding: 3%;
+                width: 160px;
+                height: 30px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>eapi</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  
+</head>
+
+<body>
+
+  <main>
+    <div class="filter_container">
+        <form id="filter_inputs">
+            <span class="filter_listbox">
+              <label for="select1">1. Your Recipient:</label>
+              <select id="select1" name="Recipient" class="filter_select first_sel">
+                <option value="Select">Select</option>
+                <option value="Her">Her</option>
+                <option value="Him">Him</option>
+                <option value="Kids">Kids</option>
+                <option value="New Parents">New Parents</option>
+                <option value="Home">Home</option>
+                <option value="Pets">Pets</option>
+              </select>
+            </span>
+            <span class="filter_listbox">
+              <label for="select2">2. Department:</label>
+              <select id="select2" name="Department" class="multi-select filter_select" style="background-color: white;">
+                <option value="Select">Select</option>
+              </select>
+            </span>
+            
+            <span class="filter_listbox">
+              <label for="select3">4. Price:</label>
+              <select id="select3" name="Price" class="multi-select filter_select" style="background-color: white;">
+                <option value="Any Price">Any Price</option>
+                <option value="Under $25">Under $25</option>
+                <option value="$25 - $50">$25 - $50</option>
+                <option value="$51 - $100">$51 - $100</option>
+                <option value="$101 - $250">$101 - $250</option>
+              </select>
+            </span>
+            <input class="btn-info large" type="submit" value="Search" id="goBtn" onclick="go(event)">
+          </form>
+    </div>
+   
+    <button class="btn-info btn-filter btn-sortByPrice" onclick="sortByPrice()">Price - Low To High</button>
+    <button class="btn-info btn-filter btn-freeShipping" onclick="freeShippingFilter()">FreeShipping</button>
+    <div id="results"></div>
+    <ul id="authors"></ul>
+    
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/filter.api.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/form.js"></script>
+  
+
+</body>
+
+</html>

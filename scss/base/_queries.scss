@@ -1,0 +1,23 @@
+$mobileMaxWidth: 740px;
+$tabletMinWidth: 1240px;
+
+// desktop
+@media (min-width: $tabletMinWidth) {
+  main {
+    // background: red;
+  }
+}
+
+// tablet
+@media (max-width: $tabletMinWidth) {
+  main {
+    // background: yellow;
+  }
+}
+
+// mobile
+@media (max-width: $mobileMaxWidth) {
+  main {
+    // background: blue;
+  }
+}
