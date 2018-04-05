@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('#goBtn')[0].disabled = true;
+    $('#goBtn')[0].style.backgroundColor = '#eee';
     $('.multi-select')[0].disabled = true;
     $('.multi-select')[0].style.backgroundColor = '#eee';
 
@@ -23,9 +24,8 @@ $(document).ready(function () {
         }
 
         if (el.val() == "Select") {
-            $('.multi-select').each(function (index) {
-                this.disabled = true;
-            })
+            $('#goBtn')[0].style.backgroundColor = '#eee';
+            $('.multi-select2').disabled = true;
             $('.multi-select')[0].style.backgroundColor = '#eee';
             $("#select2").html("<option value='Select'>Select</option>");
         }
@@ -36,10 +36,13 @@ $(document).ready(function () {
         var el = $(this);
         if (el.val() != "Select") {
             document.getElementById("goBtn").disabled = false;
+            $('#goBtn')[0].style.backgroundColor = 'blueviolet';
         }
 
         if (el.val() == "Select") {
             document.getElementById("goBtn").disabled = true;
+            $('#goBtn')[0].style.backgroundColor = '#eee';
+
         }
     });
 })
@@ -51,11 +54,11 @@ function go(event) {
         $('#select2 option:selected').text() != "Select") {
         let select1 = $('#select1 option:selected').val();
         let select2 = $('#select2 option:selected').val();
-        let formatedSelect2 = select2.replace(/&/g,"");
+        let formatedSelect2 = select2.replace(/&/g, "");
         let select3 = $('#select3 option:selected').val();
 
         // Construct the request
-        let searchUrl = "https://svcs.ebay.com/services/search/FindingService/v1";
+        let searchUrl = "https://cors-anywhere.herokuapp.com/https://svcs.ebay.com/services/search/FindingService/v1";
         searchUrl += "?OPERATION-NAME=findItemsAdvanced";
         searchUrl += "&SERVICE-VERSION=1.0.0";
         searchUrl += "&SECURITY-APPNAME=GalAkerm-eapi-PRD-8787d0107-f42d79cf";
