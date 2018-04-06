@@ -82,7 +82,7 @@ const renderMostWatchedItemsList = (items) => {
   document.getElementById("results").innerHTML = html.join("");
 }
 // list of Most Watched Items on ebay
-fetch("http://svcs.ebay.com/MerchandisingService?OPERATION-NAME=getMostWatchedItems&SERVICE-NAME=MerchandisingService&SERVICE-VERSION=1.1.0&CONSUMER-ID=GalAkerm-eapi-PRD-8787d0107-f42d79cf&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&maxResults=3")
+fetch("https://cors-anywhere.herokuapp.com/https://svcs.ebay.com/MerchandisingService?OPERATION-NAME=getMostWatchedItems&SERVICE-NAME=MerchandisingService&SERVICE-VERSION=1.1.0&CONSUMER-ID=GalAkerm-eapi-PRD-8787d0107-f42d79cf&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&maxResults=3")
 .then((resp) => resp.json())
 .then(function(resp) {
   console.log("getMostWatchedItems:", resp.getMostWatchedItemsResponse.itemRecommendations.item)
