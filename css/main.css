@@ -18,13 +18,19 @@ h1 {
 }
 
 /* line 19, ../scss/base/_base.scss */
+div#results {
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* line 24, ../scss/base/_base.scss */
 tr {
   border-bottom: 1px solid #CCC;
   padding: 15px 0;
   display: block;
 }
 
-/* line 25, ../scss/base/_base.scss */
+/* line 30, ../scss/base/_base.scss */
 .image-container {
   text-align: center;
   border: 1px solid #CCC;
@@ -32,18 +38,18 @@ tr {
   min-height: 120px;
 }
 
-/* line 32, ../scss/base/_base.scss */
+/* line 37, ../scss/base/_base.scss */
 .data-container {
   vertical-align: top;
   padding-left: 15px;
 }
 
-/* line 37, ../scss/base/_base.scss */
+/* line 42, ../scss/base/_base.scss */
 p {
   margin: 0 0 5px;
 }
 
-/* line 44, ../scss/base/_base.scss */
+/* line 49, ../scss/base/_base.scss */
 .item-link,
 .item-link:hover,
 .item-link:visited,
@@ -52,32 +58,32 @@ p {
   color: #333;
 }
 
-/* line 49, ../scss/base/_base.scss */
+/* line 54, ../scss/base/_base.scss */
 .title {
   color: #5786bd;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-/* line 55, ../scss/base/_base.scss */
+/* line 60, ../scss/base/_base.scss */
 .subtitle {
   color: #777;
   font-size: 12px;
 }
 
-/* line 60, ../scss/base/_base.scss */
+/* line 65, ../scss/base/_base.scss */
 .price {
   color: #333;
   font-weight: bold;
 }
 
-/* line 65, ../scss/base/_base.scss */
+/* line 70, ../scss/base/_base.scss */
 .bin {
   color: #777;
   font-size: 12px;
 }
 
-/* line 70, ../scss/base/_base.scss */
+/* line 75, ../scss/base/_base.scss */
 .fs {
   font-size: 12px;
   font-weight: bold;
@@ -96,7 +102,7 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
+table, caption, tbody, tfoot, thead, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,

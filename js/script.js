@@ -3,7 +3,7 @@ let items = [];
 // Parse the response and build an HTML table to display search results//
 const renderList = (items) => {
   let html = [];
-
+  html.push('<h1>eBay Search Results</h1>')
   html.push('<table width="100%" border="0" cellspacing="0" cellpadding="3"><tbody>');
   for (var i = 0; i < items.length; ++i) {
     let item = items[i];
@@ -57,7 +57,7 @@ const renderMostWatchedItemsList = (items) => {
   let html = [];
 
   html.push('<table width="100%" border="0" cellspacing="0" cellpadding="3"><tbody>');
-  html.push('<tr><td><h2 class="title">Most Watched Items List</h2></td></tr>')
+  html.push('<tr><td><h1 class="">The Most Watched Items List</h1></td></tr>')
   for (var i = 0; i < items.length; ++i) {
     let item = items[i];
     let title = item.title;
