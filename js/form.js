@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $('.btn-freeShipping').hide()
+    $('.btn-sortByPrice').hide()
     $('#goBtn')[0].disabled = true;
     $('#goBtn')[0].style.backgroundColor = '#eee';
     $('.multi-select')[0].disabled = true;

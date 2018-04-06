@@ -39,6 +39,8 @@ const renderList = (items) => {
 
   html.push("</tbody></t able>");
   document.getElementById("results").innerHTML = html.join("");
+  $('.btn-freeShipping').show()
+  $('.btn-sortByPrice').show()
 }
 
 const _cb_findItemsByKeywords = (root) => {
@@ -51,6 +53,43 @@ const _cb_findItemsByKeywords = (root) => {
   renderList(items);
 }
 
+const renderMostWatchedItemsList = (items) => {
+  let html = [];
+
+  html.push('<table width="100%" border="0" cellspacing="0" cellpadding="3"><tbody>');
+  html.push('<tr><td><h2 class="title">Most Watched Items List</h2></td></tr>')
+  for (var i = 0; i < items.length; ++i) {
+    let item = items[i];
+    let title = item.title;
+    let subtitle = item.subtitle || '';
+    let pic = item.imageURL;
+    let viewitem = item.viewItemURL;
+    let displayPrice = item.buyItNowPrice['@currencyId'] + ' ' + item.buyItNowPrice['__value__'];
+
+    if (null !== title && null !== viewitem) {
+     
+      html.push('<tr><td class="image-container" onclick="imgClick(event)"><img src="' + pic + '"border = "0"></td>');
+      html.push('<td class="data-container"><a class="item-link" href="' + viewitem + '"target="_blank">');
+      html.push('<p class="title">' + title + '</p>');
+      html.push('<p class="subtitle">' + subtitle + '</p>');
+      html.push('<p class="price">' + displayPrice + '</p>');
+    
+      html.push('</a></td></tr>');
+    }
+  }
+
+  html.push("</tbody></table>");
+  document.getElementById("results").innerHTML = html.join("");
+}
+// list of Most Watched Items on ebay
+fetch("http://svcs.ebay.com/MerchandisingService?OPERATION-NAME=getMostWatchedItems&SERVICE-NAME=MerchandisingService&SERVICE-VERSION=1.1.0&CONSUMER-ID=GalAkerm-eapi-PRD-8787d0107-f42d79cf&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&maxResults=3")
+.then((resp) => resp.json())
+.then(function(resp) {
+  console.log("getMostWatchedItems:", resp.getMostWatchedItemsResponse.itemRecommendations.item)
+  let mostWatchedItems = resp.getMostWatchedItemsResponse.itemRecommendations.item;
+  renderMostWatchedItemsList(mostWatchedItems);
+})
+
 
 
 let imgClick = (e) => {
@@ -58,6 +97,8 @@ let imgClick = (e) => {
   element.classList.toggle("img-select");
   console.log(element)
 }
+
+
 
 // // another fetch example
 // function createNode(element) {
