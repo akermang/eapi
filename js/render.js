@@ -44,15 +44,16 @@ const renderList = (items) => {
 }
 
 const _cb_findItemsByKeywords = (root) => {
-  if(root.errorMessage){
+  if (root.errorMessage) {
     console.log("errorMessage:", root.errorMessage[0].error[0].message[0]);
   }
-  console.log(root.findItemsAdvancedResponse[0])
   items = root.findItemsAdvancedResponse[0].searchResult[0].item || [];
-  console.log("searchResult items:",items,root)  
+  console.log("searchResult items:", items)
   renderList(items);
 }
 
+
+//  render list of Most Watched Items on ebay
 const renderMostWatchedItemsList = (items) => {
   let html = [];
 
@@ -67,13 +68,13 @@ const renderMostWatchedItemsList = (items) => {
     let displayPrice = item.buyItNowPrice['@currencyId'] + ' ' + item.buyItNowPrice['__value__'];
 
     if (null !== title && null !== viewitem) {
-     
+
       html.push('<tr><td class="image-container" onclick="imgClick(event)"><img src="' + pic + '"border = "0"></td>');
       html.push('<td class="data-container"><a class="item-link" href="' + viewitem + '"target="_blank">');
       html.push('<p class="title">' + title + '</p>');
       html.push('<p class="subtitle">' + subtitle + '</p>');
       html.push('<p class="price">' + displayPrice + '</p>');
-    
+
       html.push('</a></td></tr>');
     }
   }
@@ -81,22 +82,31 @@ const renderMostWatchedItemsList = (items) => {
   html.push("</tbody></table>");
   document.getElementById("results").innerHTML = html.join("");
 }
-// list of Most Watched Items on ebay
+
+// fatch for list of Most Watched Items on ebay
 fetch("https://cors-anywhere.herokuapp.com/https://svcs.ebay.com/MerchandisingService?OPERATION-NAME=getMostWatchedItems&SERVICE-NAME=MerchandisingService&SERVICE-VERSION=1.1.0&CONSUMER-ID=GalAkerm-eapi-PRD-8787d0107-f42d79cf&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&maxResults=3")
+.then((response) => {
+  if (response.ok) {
+    return response;
+  }
+  throw new Error('Network response was not ok.');
+})
 .then((resp) => resp.json())
-.then(function(resp) {
-  console.log("getMostWatchedItems:", resp.getMostWatchedItemsResponse.itemRecommendations.item)
+.then((resp) => {
   let mostWatchedItems = resp.getMostWatchedItemsResponse.itemRecommendations.item;
   renderMostWatchedItemsList(mostWatchedItems);
 })
+.catch((error) => {
+  console.log('There has been a problem with your fetch operation: ', error.message);
+});
 
 
-
-let imgClick = (e) => {
-  let element = e.target
-  element.classList.toggle("img-select");
-  console.log(element)
-}
+// event handler //
+// let imgClick = (e) => {
+//   let element = e.target
+//   element.classList.toggle("img-select");
+//   console.log(element)
+// }
 
 
 

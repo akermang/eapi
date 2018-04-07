@@ -9,14 +9,14 @@ const sortByPrice = () => {
   
   const freeShippingFilter = () => {
     let listToFilter = [...items];
-    let freeShipingList = listToFilter.filter((item) => {
+    let freeShippingListArray = listToFilter.filter((item) => {
       let shippingInfo = item.shippingInfo[0] || {};
       let freeShipping = shippingInfo.shippingType[0] === 'Free';
       if (freeShipping) {
         return item
       }
     })
-    renderList(freeShipingList);
+    renderList(freeShippingListArray);
   }
 
 const createSearchFilterUrl=(filter)=>{
@@ -68,62 +68,27 @@ function buildURLArray(filterarray) {
 // defaultSearchFilters = buildURLArray(filterOptions);
 
 var prices = [
-    {
-        "num": "Under $25",
-
-        "filter": [{
-            "name": "MaxPrice",
-            "value": "25",
-            "paramName": "Currency",
-            "paramValue": "USD"
-        }]
-    },
-    {
-        "num": "$25 - $50",
-
-        "filter": [{
-            "name": "MinPrice",
-            "value": "25",
-            "paramName": "Currency",
-            "paramValue": "USD"
+        {   "num": "Under $25",
+            "filter": [
+                {"name": "MaxPrice","value": "25","paramName": "Currency","paramValue": "USD"}
+            ]
         },
-        {
-            "name": "MaxPrice",
-            "value": "50",
-            "paramName": "Currency",
-            "paramValue": "USD"
-        }]
-    },
-    {
-        "num": "$51 - $100",
-
-        "filter": [{
-            "name": "MinPrice",
-            "value": "51",
-            "paramName": "Currency",
-            "paramValue": "USD"
+        {   "num": "$25 - $50",
+            "filter": [
+                {"name": "MinPrice","value": "25","paramName": "Currency","paramValue": "USD"},
+                {"name": "MaxPrice","value": "50","paramName": "Currency","paramValue": "USD"}
+            ]
         },
-        {
-            "name": "MaxPrice",
-            "value": "100",
-            "paramName": "Currency",
-            "paramValue": "USD"
-        }]
-    },
-    {
-        "num": "$101 - $250",
-
-        "filter": [{
-            "name": "MinPrice",
-            "value": "101",
-            "paramName": "Currency",
-            "paramValue": "USD"
+        {   "num": "$51 - $100",
+            "filter": [
+                {"name": "MinPrice","value": "51","paramName": "Currency","paramValue": "USD"},
+                {"name": "MaxPrice","value": "100","paramName": "Currency","paramValue": "USD"}
+            ]
         },
-        {
-            "name": "MaxPrice",
-            "value": "250",
-            "paramName": "Currency",
-            "paramValue": "USD"
-        }]
-    }
-];
+        {   "num": "$101 - $250",
+            "filter": [
+                {"name": "MinPrice","value": "101","paramName": "Currency","paramValue": "USD"},
+                {"name": "MaxPrice","value": "250","paramName": "Currency","paramValue": "USD"}
+            ]
+        }
+    ];

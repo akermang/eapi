@@ -49,8 +49,8 @@ $(document).ready(function () {
     });
 })
 
-//create URL
-function go(event) {
+//create URL 
+function goSearch(event) {
     event.preventDefault();
     if ($('#select1 option:selected').text() != "Select" &&
         $('#select2 option:selected').text() != "Select") {
@@ -81,14 +81,21 @@ function go(event) {
             }
         };
 
+        //* add default filters to search *//
         // searchUrl += defaultSearchFilters;
-        // console.log("searchUrl:", searchUrl)
-        // Submit the request
-        let s = document.createElement('script'); // create script element
-        console.log(searchUrl)
+
+        //* Submit the request by creating  and appending script with searchUrl as src *//
+        // let s = document.createElement('script'); // create script element
         // s.src = searchUrl;
         // document.body.appendChild(s);
-        fetch(searchUrl)
+
+        fetch(searchUrl) // i like the fetch way //
+            .then((response) => {
+                if (response.ok) {
+                return response;
+                }
+                throw new Error('Network response was not ok.');
+            })
             .then((resp) => resp.json())
             .then((data) => {
                 if (data.errorMessage) {
@@ -106,6 +113,8 @@ function go(event) {
 
 
 
+// *** this is another way to create URL from list of URLs ( data = [] and prices = [] ) ***//
+// *** this method open new window tab, not render the result. ***//
 
         // for (var i = 0; i < data.length; i++) {
         //     if ($('#select1 option:selected').text() == data[i].Recipient && $('#select2 option:selected').text() == data[i].Department && $('#select4 option:selected').text() == data[i].Category && $('#select3 option:selected').text() == data[i].Price_Point) {
