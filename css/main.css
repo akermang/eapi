@@ -200,3 +200,12 @@ table {
   border: 2px solid #e689e1;
   margin: 5 5 10 5;
 }
+
+@media (max-width: 360px) {
+  /* line 21, ../scss/base/_queries.scss */
+  main .data-container {
+    max-width: 155px;
+    overflow: scroll;
+    font-size: 67%;
+  }
+}

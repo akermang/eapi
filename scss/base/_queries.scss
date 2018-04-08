@@ -1,4 +1,4 @@
-$mobileMaxWidth: 740px;
+$mobileMaxWidth: 360px;
 $tabletMinWidth: 1240px;
 
 // desktop
@@ -18,6 +18,11 @@ $tabletMinWidth: 1240px;
 // mobile
 @media (max-width: $mobileMaxWidth) {
   main {
-    // background: blue;
+    .data-container{
+      max-width: 155px;
+      overflow: scroll;
+      font-size: 67%;
+
+    }
   }
 }
