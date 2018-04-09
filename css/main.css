@@ -201,7 +201,7 @@ table {
   margin: 5 5 10 5;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   /* line 21, ../scss/base/_queries.scss */
   main .data-container {
     max-width: 155px;
