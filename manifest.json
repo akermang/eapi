@@ -3,7 +3,7 @@
     "name": "AuraPlayer",
     "icons": [
       {
-        "src": "../../www/img/sun-favicon.png",
+        "src": "./assets/img/favicon.png",
         "type": "image/png",
         "sizes": "144x144"
       }
