@@ -1,0 +1,211 @@
+/* line 1, ../scss/base/_base.scss */
+main {
+  height: 100%;
+}
+
+/* line 7, ../scss/base/_base.scss */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 11, ../scss/base/_base.scss */
+h1 {
+  color: #777;
+  font-weight: normal;
+  font-size: 24px;
+  margin: 0;
+  margin-left: 5px;
+}
+
+/* line 19, ../scss/base/_base.scss */
+div#results {
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* line 24, ../scss/base/_base.scss */
+tr {
+  border-bottom: 1px solid #CCC;
+  padding: 15px 0;
+  display: block;
+}
+
+/* line 30, ../scss/base/_base.scss */
+.image-container {
+  text-align: center;
+  border: 1px solid #CCC;
+  width: 150px;
+  min-height: 120px;
+}
+
+/* line 37, ../scss/base/_base.scss */
+.data-container {
+  vertical-align: top;
+  padding-left: 15px;
+}
+
+/* line 42, ../scss/base/_base.scss */
+p {
+  margin: 0 0 5px;
+}
+
+/* line 49, ../scss/base/_base.scss */
+.item-link,
+.item-link:hover,
+.item-link:visited,
+.item-link:active {
+  text-decoration: none;
+  color: #333;
+}
+
+/* line 54, ../scss/base/_base.scss */
+.title {
+  color: #5786bd;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* line 60, ../scss/base/_base.scss */
+.subtitle {
+  color: #777;
+  font-size: 12px;
+}
+
+/* line 65, ../scss/base/_base.scss */
+.price {
+  color: #333;
+  font-weight: bold;
+}
+
+/* line 70, ../scss/base/_base.scss */
+.bin {
+  color: #777;
+  font-size: 12px;
+}
+
+/* line 75, ../scss/base/_base.scss */
+.fs {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 18, ../scss/base/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 27, ../scss/base/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 30, ../scss/base/_reset.scss */
+body, html {
+  height: 100%;
+}
+
+/* line 33, ../scss/base/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 36, ../scss/base/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 39, ../scss/base/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 43, ../scss/base/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 47, ../scss/base/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 1, ../scss/layout/_filter.scss */
+.filter_container {
+  background: #b400ff47;
+  height: 187px;
+  margin-bottom: 5px;
+}
+/* line 6, ../scss/layout/_filter.scss */
+.filter_container form {
+  display: block;
+  margin: auto;
+  width: auto;
+  text-align: left;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+/* line 15, ../scss/layout/_filter.scss */
+.filter_container form .filter_listbox {
+  margin: 0% 2% 0% 0%;
+  position: static !important;
+  display: inline-block;
+}
+/* line 20, ../scss/layout/_filter.scss */
+.filter_container form .filter_listbox label {
+  font-size: 18px;
+  color: #5786bd;
+  display: flex;
+  margin-bottom: 2%;
+  font-family: 'CustomFont','Helvetica Neue',Arial !important;
+}
+/* line 28, ../scss/layout/_filter.scss */
+.filter_container form .filter_listbox .filter_select {
+  padding: 3%;
+  width: 160px;
+  height: 30px;
+}
+
+/* line 1, ../scss/modules/_buttons.scss */
+.btn-info {
+  background: blueviolet;
+  color: white;
+  font-size: 80%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #e689e1;
+  margin: 5 5 10 5;
+}
+
+@media (max-width: 480px) {
+  /* line 21, ../scss/base/_queries.scss */
+  main .data-container {
+    max-width: 155px;
+    overflow: scroll;
+    font-size: 67%;
+  }
+}

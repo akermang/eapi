@@ -21,7 +21,7 @@ const renderList = (items) => {
 
     if (null !== title && null !== viewitem) {
       html.push('<tr><td class="image-container" onclick="imgClick(event)"><img src="' + pic + '"border = "0"></td>');
-      html.push('<td class="data-container"><a class="item-link" href="' + viewitem + '"target="_blank">');
+      html.push('<td class="data-container" onclick="imgClick(event)"><a class="item-link" href="' + viewitem + '"target="_blank">');
       html.push('<p class="title">' + title + '</p>');
       html.push('<p class="subtitle">' + subtitle + '</p>');
       html.push('<p class="price">' + displayPrice + '</p>');
@@ -69,8 +69,8 @@ const renderMostWatchedItemsList = (items) => {
 
     if (null !== title && null !== viewitem) {
 
-      html.push('<tr><td class="image-container" onclick="imgClick(event)"><img src="' + pic + '"border = "0"></td>');
-      html.push('<td class="data-container"><a class="item-link" href="' + viewitem + '"target="_blank">');
+      html.push('<tr onclick="imgClick(event)"><td class="image-container"><img src="' + pic + '"border = "0"></td>');
+      html.push('<td class="data-container ><a class="item-link" href="' + viewitem + '"target="_blank">');
       html.push('<p class="title">' + title + '</p>');
       html.push('<p class="subtitle">' + subtitle + '</p>');
       html.push('<p class="price">' + displayPrice + '</p>');
@@ -102,11 +102,21 @@ fetch("https://cors-anywhere.herokuapp.com/https://svcs.ebay.com/MerchandisingSe
 
 
 // event handler //
-// let imgClick = (e) => {
-//   let element = e.target
-//   element.classList.toggle("img-select");
-//   console.log(element)
-// }
+const imgClick = (e) => {
+  e.preventDefault();
+  let element = e.target
+  element.classList.toggle("img-select");
+  var h = $("a",this).attr('href');
+  alert(h);
+  console.log(element)
+}
+// $('.atleta').click(function(e) {
+//   e.preventDefault();
+//   // $('.atleta').removeClass('atleta_atual');
+//   // $(this).addClass('atleta_atual');
+//   var h = $("a",this).attr('href');
+//   alert(h);
+// });
 
 
 

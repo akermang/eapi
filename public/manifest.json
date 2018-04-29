@@ -1,0 +1,15 @@
+{
+    "short_name": "EAPI",
+    "name": "EBAY api research",
+    "icons": [
+      {
+        "src": "img/ebay.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      }
+    ],
+    "display": "standalone",
+    "start_url": "index.html?launcher=true",
+    "background_color": "#3E4EB8",
+    "theme_color": "#2F3BA2"
+  }
