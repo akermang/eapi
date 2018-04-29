@@ -1,9 +1,9 @@
 {
-    "short_name": "EAPI",
-    "name": "EBAY api research",
+    "short_name": "AuraPlayer",
+    "name": "AuraPlayer",
     "icons": [
       {
-        "src": "img/ebay.png",
+        "src": "../../www/img/sun-favicon.png",
         "type": "image/png",
         "sizes": "144x144"
       }
